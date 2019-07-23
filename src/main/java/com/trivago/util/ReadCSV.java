@@ -19,8 +19,7 @@ public class ReadCSV {
 		ArrayList<Hotel> hotels = new ArrayList<>();
 		Map<BigInteger, List<Hotel>> topHotels = null;
 		InputStreamReader is = new InputStreamReader(getClass().getResourceAsStream(pathToClicksCSV));
-		BufferedReader br = new BufferedReader(is);
-		try {
+		try(BufferedReader br = new BufferedReader(is)) {
 			String line = null;
 			while ((line = br.readLine()) != null) {
 				Hotel hotel = new Hotel();
@@ -47,8 +46,7 @@ public class ReadCSV {
 		ArrayList<Amenity> amenities = new ArrayList<>();
 		Map<BigInteger, List<Amenity>> topAmenities = null;
 		InputStreamReader is = new InputStreamReader(getClass().getResourceAsStream(pathToAmenitiesCSV));
-		BufferedReader br = new BufferedReader(is);
-		try {
+		try(BufferedReader br = new BufferedReader(is)) {
 			String line = null;
 			while ((line = br.readLine()) != null) {
 				Amenity hotel = new Amenity();
